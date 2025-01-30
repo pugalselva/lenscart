@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courier Management Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- stylesheet -->
+     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <!-- script -->
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script src="script.js"></script>
+      <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Courier Management</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleSidebar()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shipments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Couriers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tracking</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://via.placeholder.com/40" alt="User" class="user-avatar">
+                            Admin Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            
+        </div>
+        <a href="#" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="#"><i class="fas fa-box-open"></i> Consignments</a>
+        <a href="#"><i class="fas fa-truck-loading"></i> Pickups</a>
+        <a href="#"><i class="fas fa-address-book"></i> Address Book</a>
+        <a href="#"><i class="fas fa-warehouse"></i> Virtual Inventory</a>
+        <a href="#"><i class="fas fa-download"></i> Downloads</a>
+        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+        <a href="#"><i class="fas fa-code"></i> API Playground</a>
+    </div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container d-flex flex-wrap justify-content-around mt-5">
+            <!-- Customer Portal Dashboard Section -->
+            <div class="row mb-4">
+                <div class="col-4">
+                    <h5 class="section-title"><a href="#" id="showDashboard">CustomerPortalDashboard</a></h5>
+                </div>
+                <!-- Hidden by default -->
+                <div class="hidden-section" id="dashboardSection">
+                    <div class="col-md-4 mb-4">
+                        <div class="dashboard-card">
+                            <i class="fas fa-user"></i>
+                            <h4><a href="#" class="text-white text-decoration-none">Profile</a></h4>
+                            <p>Manage your account</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="dashboard-card">
+                            <i class="fas fa-box"></i>
+                            <h4><a href="#" class="text-white text-decoration-none">Bookings</a></h4>
+                            <p>View and manage bookings</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="dashboard-card">
+                            <i class="fas fa-truck"></i>
+                            <h4><a href="#" class="text-white text-decoration-none">Deliveries</a></h4>
+                            <p>Track your deliveries</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Booking vs Delivered Section -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h5 class="section-title"><a href="#" id="showBookingVsDelivered">Booking vs Delivered</a></h5>
+                </div>
+                <!-- Hidden by default -->
+                <div class="hidden-section" id="bookingVsDeliveredSection">
+                    <div class="col-md-6 mb-4">
+                        <div class="dashboard-card">
+                            <i class="fas fa-clipboard-list"></i>
+                            <h4>Bookings</h4>
+                            <p>10 Pending</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="dashboard-card">
+                            <i class="fas fa-shipping-fast"></i>
+                            <h4>Delivered</h4>
+                            <p>8 Completed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Dashboard Cards -->
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="card bg-primary text-white">
+                    <div class="card-body">
+                        <p>Total Shipments</p>
+                        <h2 class="overview-card">1200</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-success text-white">
+                    <div class="card-body">
+                        <p>Deliveries Today</p>
+                        <h2 class="overview-card">100</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-warning text-dark">
+                    <div class="card-body">
+                        <p>Pending Deliveries</p>
+                        <h2 class="overview-card">30</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-danger text-white">
+                    <div class="card-body">
+                        <p>Delayed Shipments</p>
+                        <h2 class="overview-card">5</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activities -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Recent Activities
+                    </div>
+                    <div class="card-body recent-activities">
+                        <ul>
+                            <li>Shipment #1001 was delivered successfully.</li>
+                            <li>Courier John Doe assigned to shipment #1002.</li>
+                            <li>Shipment #1003 is delayed due to weather conditions.</li>
+                            <li>Tracking update for shipment #1004: Out for delivery.</li>
+                            <li>Courier Jane Smith started her shift.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra pharetra ex, non varius justo malesuada ac.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Shipments</a></li>
+                        <li><a href="#">Couriers</a></li>
+                        <li><a href="#">Tracking</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Courier Management. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS and Popper.js (optional for interactivity) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Hide all sections initially
+            $('.hidden-section').hide();
+    
+            // Click event for Customer Portal Dashboard link
+            $('#showDashboard').click(function(event){
+                event.preventDefault(); // Prevent default link behavior
+                $('#dashboardSection').toggle(); // Show or hide the dashboard section
+                $('#bookingVsDeliveredSection').hide(); // Hide the other section
+            });
+    
+            // Click event for Booking vs Delivered link
+            $('#showBookingVsDelivered').click(function(event){
+                event.preventDefault(); // Prevent default link behavior
+                $('#bookingVsDeliveredSection').toggle(); // Show or hide the Booking vs Delivered section
+                $('#dashboardSection').hide(); // Hide the other section
+            });
+        });
+    </script>
+    <script>
+        function toggleSidebar() {
+            $('#sidebar').toggleClass('active'); 
+        }
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,183 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    margin: 20px 0;
+}
+.overview-card {
+    font-size: 24px;
+    font-weight: bold;
+}
+.recent-activities {
+    max-height: 300px;
+    overflow-y: auto;
+}
+.navbar {
+    background: linear-gradient(135deg, #6d5b5b, #2b2b3b);
+    padding: 2rem 5rem;
+    position: fixed; /* or sticky */
+    top: 0; /* Keeps it at the top */
+    width: 100%; /* Spans the entire width */
+    z-index:0;
+    
+    
+}
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+.navbar-brand:hover {
+    color: #f39c12;
+}
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #b1b1b1;
+    padding: 0.75rem 1.5rem;
+    transition: color 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+    color: #f39c12;
+}
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu {
+    background-color: #2b2b3b;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.dropdown-item {
+    color: #b1b1b1;
+}
+.dropdown-item:hover {
+    background-color: #1e1e2d;
+    color: #f39c12;
+}
+.dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0.5rem;
+}
+/* Footer Styling */
+.footer {
+    background: #1e1e2d;
+    color: #b1b1b1;
+    padding: 40px 0;
+    font-size: 0.9rem;
+}
+.footer a {
+    color: #f39c12;
+    text-decoration: none;
+}
+.footer a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+.footer .social-icons a {
+    font-size: 1.5rem;
+    color: #f39c12;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+.footer .social-icons a:hover {
+    color: #ffffff;
+}
+.footer .footer-bottom {
+    background: #2b2b3b;
+    color: #b1b1b1;
+    padding: 20px 0;
+    text-align: center;
+}
+/* Sidebar Styling */
+.sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    top: 5rem;
+    background-color: #5c6d7e;
+    color: white;
+    transition: all 0.3s;
+    padding: 15px;
+    position: fixed;
+}
+.sidebar.active {
+    left: 0; /* Show when active */
+}
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    transition: background 0.3s;
+}
+.sidebar a:hover {
+    background-color: #495057;
+}
+.navbar-toggler {
+    z-index: 1030; 
+}
+.user-avatar {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.main-content {
+    margin-left: 270px; /* Adjust to fit the sidebar width */
+    padding:4rem;
+}
+/* Ensuring the footer does not overlap content */
+.footer {
+    margin-left: 270px;
+    width: calc(100% - 270px);
+}
+/* dashboard */
+.dashboard-card {
+    padding: 20px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+.dashboard-card:hover {
+    background-color: #0056b3;
+}
+.dashboard-card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.dashboard-card h4 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+.dashboard-card p {
+    margin: 0;
+}
+.section-title {
+    margin-bottom: 20px;
+    font-size: rem;
+    color: #6c6c6c;
+}
+/* Hide sections initially */
+.hidden-section {
+    display: none;
+}
+
+/* border create  */
+
+
+
+/* media query */
+@media (max-width: 768px) {
+    .navbar {
+        position: static; /* Or adjust based on your needs */
+    }
+}
